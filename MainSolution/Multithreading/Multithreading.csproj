@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="_8_TaskFactory.cs" />
     <Compile Include="_2_ForegroundThreads.cs" />
     <Compile Include="_1_Thread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_3_ParameterizedThreadStart.cs" />
+    <Compile Include="_4_VariablesAndThread.cs" />
+    <Compile Include="_5_ThreadPool.cs" />
+    <Compile Include="_6_Tasks.cs" />
+    <Compile Include="_7_ChildTasks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
