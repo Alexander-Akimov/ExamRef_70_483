@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,22 +11,23 @@ namespace Multithreading
     {
         public static void Main(string[] args)
         {
-            Task<List<int>> parent = Task.Run(() =>
+            Task<Int32[]> parent = Task.Run(() =>
             {
-               // var results = new Int32[3];
-                List<int> results = new List<int>();
+                var results = new Int32[3];
+               //List<int> results = new List<int>(); // not thread-safe
+               // BlockingCollection<int> results = new BlockingCollection<int>();
 
                 TaskFactory tf = new TaskFactory(
                     TaskCreationOptions.AttachedToParent,
                     TaskContinuationOptions.ExecuteSynchronously);
 
-                //tf.StartNew(() => results[0] = 0);
-                //tf.StartNew(() => results[1] = 1);
-                //tf.StartNew(() => results[2] = 2);
+                tf.StartNew(() => results[0] = 0); 
+                tf.StartNew(() => results[1] = 1);
+                tf.StartNew(() => results[2] = 2);
 
-                tf.StartNew(() => results.Add(0));
-                tf.StartNew(() => results.Add(1));
-                tf.StartNew(() => results.Add(2));
+                //tf.StartNew(() => results.Add(0));
+                //tf.StartNew(() => results.Add(1));
+                //tf.StartNew(() => results.Add(2));
 
                 return results;
             });
@@ -33,8 +35,10 @@ namespace Multithreading
             var finalTask = parent.ContinueWith(
                 parentTask =>
                 {
-                    foreach (int i in parentTask.Result.ToArray())
+                    foreach (int i in parentTask.Result)
+                    {
                         Console.WriteLine(i);
+                    }
                 });
 
             finalTask.Wait();
