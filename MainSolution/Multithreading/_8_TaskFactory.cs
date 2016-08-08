@@ -9,8 +9,11 @@ namespace Multithreading
 {
     class _8_TaskFactory
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
+
+
+
             Task<Int32[]> parent = Task.Run(() =>
             {
                 var results = new Int32[3];
