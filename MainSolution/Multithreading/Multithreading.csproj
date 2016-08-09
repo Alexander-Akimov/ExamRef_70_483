@@ -52,7 +52,7 @@
     <Compile Include="_5_ThreadPool.cs" />
     <Compile Include="_6_Tasks.cs" />
     <Compile Include="_7_ChildTasks.cs" />
-    <Compile Include="_9_WaitAll.cs" />
+    <Compile Include="_9_WaitAll_WhenAll.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
