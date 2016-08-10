@@ -10,7 +10,7 @@ namespace Multithreading
     class _5_ThreadPool
     {
 
-        public static void Main4(string[] args)
+        public static void Main1(string[] args)
         {
             ThreadPool.QueueUserWorkItem((s) =>
             {

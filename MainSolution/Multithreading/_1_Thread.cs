@@ -17,7 +17,7 @@ namespace Multithreading
                 Thread.Sleep(0);
             }
         }
-        static void Main0(string[] args)
+        static void Main1(string[] args)
         {
             System.Threading.Thread t = new System.Threading.Thread(new ThreadStart(ThreadMethod));
             t.Start();

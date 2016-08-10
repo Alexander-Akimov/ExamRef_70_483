@@ -5,7 +5,7 @@ namespace Multithreading
 {
     public class _6_Tasks
     {
-        public static void Main5(string[] args)
+        public static void Main1(string[] args)
         {
             Task t = Task.Run(() =>
             {

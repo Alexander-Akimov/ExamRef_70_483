@@ -14,7 +14,7 @@ namespace Multithreading
              return Thread.CurrentThread.ManagedThreadId;
          });
 
-        public static void Main3(string[] args)
+        public static void Main1(string[] args)
         {
             new Thread(() =>
             {

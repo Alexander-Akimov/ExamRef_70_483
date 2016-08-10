@@ -8,7 +8,7 @@ namespace Multithreading
 {
     class _7_ChildTasks
     {
-        public static void Main6(string[] args)
+        public static void Main1(string[] args)
         {
             Task<Int32[]> parent = Task.Run(() =>
             {
